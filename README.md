@@ -21,16 +21,16 @@
    
 조준희
 <details>
- <summary> 1 </summary>
+ <summary> RESTful이란 무엇이며, 이것에 대해서 아는대로 설명해보세요.(보충필요) </summary>
  <div markdown="1">
 </details>
 
 <details>
- <summary> 2 </summary>
+ <summary> 프로세스와 스레드의 차이를 설명해보세요. </summary>
  <div markdown="1">
 </details>
    
 <details>
- <summary> 3 </summary>
+ <summary> ACID에 대해서 설명해주세요. </summary>
  <div markdown="1">
 </details>
