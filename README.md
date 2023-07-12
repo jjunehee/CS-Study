@@ -229,18 +229,49 @@ B가 결정자가 되므로 이는 제2정규화의 대상이 된다.
 
 정규성
 <details>
- <summary> 1 </summary>
+ <summary> HTTP와 HTTPS의 차이점에 대해서 설명해보세요. </summary>
 </br>
+ http는 어플리케이션 레이어에서 동작하는 프로토콜입니다. 요청과 응답으로 구성됩니다. 브라우저 사용자가 웹 서버에 http get 요청을 보내면 웹 서버는 요청을 받고 이에 해당하는 암호화되지 않은 데이터를 응답합니다.
+
+https 는 http연결에 보안을 추가한 프로토콜입니다. ssl 혹은 tsl 기술을 활용하여 암호화를 진행하여 중간에 데이터를 확인할 수 없습니다. 이를 구축하기 위해서는 외부 인증 기관에서 ssl 혹은 tsl 인증서를 획득하고 이를 공유해야합니다.  
+
+++SSL? TSL?
+
+ssl 과 tsl 은 모두 시스템 간의 암호화를 제공합니다. tsl 은 ssl 의 업데이트 버전이며, ssl 은 3.0 버전 이후로 업데이트 되지 않으며, tsl 1.0으로 업데이트를 진행중입니다.
+
+tsl 이 되면서 ssl 에 비해 핸드셰이크 프로세스가 짧아지고 암호화 과정을 줄여 프로세스 속도가 올라갔습니다.
 </details>
 
 <details>
- <summary> 2 </summary>
+ <summary> Spring Bean이란 무엇인가요? </summary>
 </br>
+ spring은 제어의 역전이 일어나므로, 일부 자바 객체를 관리합니다. 이때 관리되는 자바 객체들을 bean 이라고 부릅니다. 
+
+bean에 객체를 등록하기 위한 방법은 여러가지가 있습니다.
+
+1. xml 파일에 bean 태그를 활용하여 등록 : xml 파일에 bean 태그와 함께 class 의 경로와 property를 입력하면 bean에 등록할 수 있습니다. 
+2. component scan : 특정 annotation 을 붙이면 spring이 이를 읽고, 자동으로 bean 객체를 만들어 줍니다.(component, controller, service, repository, configuration …)
+    
+    이후 xml 파일에 component-scan context 를 통해 annotation이 달린 객체들을 bean으로 만듭니다. ⇒ 이 과정은 ComponentScan annotation 으로 대체될 수 있습니다.
+    
+3. @Bean annotation 활용 : configuration annotation 과 함께 bean annotation 으로 객체를 return 하는 메소드를 bean으로 등록할 수 있습니다.
 </details>
 
 <details>
- <summary> 3 </summary>
+ <summary> TDD를 알고 있나요? TDD에 대해서 어떻게 생각하나요? </summary>
 </br>
+ TDD란 테스트 주도 개발으로, 개발을 마치고 테스트를 진행하는 것이 아니라, 테스트를 먼저 준비하고 이에 맞춰 개발을 진행하는 개발 방법을 말합니다. 
+
+장점
+
+1. 설계 수정 시간의 단축 : 테스트 코드를 먼저 작성하기 때문에 입출력 데이터와 기능을 명확하게 하므로 문제를 사전에 발견할 수 있습니다.
+2. 유지 보수 용이성 : 기본적으로 단위 테스트를 위한 테스트 코드를 작성하기 때문에, 추후에 모듈 별로 테스트를 진행하면서 유지 보수가 용이해집니다.
+3. 테스트 문서 작성 보조 : TDD 를 진행하며 테스트를 자동화시킴과 동시에 더 정확한 테스트 근거로 테스트 문서를 보완할 수 있습니다.
+
+단점
+
+1. 사전 준비 기간 : 프로젝트 도입시 사전에 지식을 습득하고 개발 환경 구축하는 데에 많은 시간이 걸린다. TDD 를 효과적으로 사용할 수 있는 수준의 교육에는 수준에 따라 1~6개월이 걸립니다.
+2. 생산성 저하 : 개발 기간이 짧은 경우 TDD 를 이용해 테스트 코드를 작성하고 이를 통과하기 위한 코드를 작성한다면 개발 기간이 그만큼 더 부족해 질 수 있습니다.
 </details>
 
 조준희
