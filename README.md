@@ -374,20 +374,36 @@ DB와의 connection을 통해 직접 트랜젝션을 수행한다면 JDBC, JPA �
 
 조준희
 <details>
- <summary> 1 </summary>
+ <summary> Spring DI/IoC에 대해 설명해시오 </summary>
 </br>
+IoC는 "제어의 역전" 이라는 의미로, 객체나 메서드의 호출을 개발자가 결정하는 것이 아닌, 객체의 생성에서부터 생명주기의 관리까지 모든 객체에 대한 제어권을 프레임워크 내부에서 결정한다는 의미이다.
+
+DI "의존성 주입" 은 스프링 프레임워크에서 지원하는 IoC의 한 형태로 클래스 사이의 의존관계를 빈 설정 정보를 바탕으로 컨테이너가 자동으로 연결해줍니다.
+의존성 주입의 방법으로슨 생성자 주입, setter 주입, 필드 주입이 있다.
+
+스프링에서는 스프링 컨테이너(Application Context)를 이용하여 설정 정보를 생성, 등록하고 필요한 객체를 생성자, setter, 필드를 통해 주입합니다.
  
 </details>
 
 <details>
- <summary> 2 </summary>
+ <summary> Spring Bean이란 무엇인가요? </summary>
 </br>
+우리가 알던 기존의 Java Programming 에서는 Class를 생성하고 new를 입력하여 원하는 객체를 직접 생성한 후에 사용했었습니다. 하지만 Spring에서는 직접 new를 이용하여 생성한 객체가 아니라, Spring에 의하여 관리당하는 자바 객체를 사용합니다. 이렇게 Spring에 의하여 생성되고 관리되는 자바 객체를 Bean이라고 합니다. Spring Framework 에서는 Spring Bean 을 얻기 위하여 ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.
 
+Bean 생성은 @component, @Controller, @Service, @Repository과 같은 어노테이션으로 등록이 가능하며,  Bean Configuration File에 직접 Bean 등록하는 방법이 있습니다.
 </details>
 
 <details>
- <summary> 3 </summary>
+ <summary> Servlet Filter와 Spring Interceptor의 차이는 무엇인가요? </summary>
 </br>
- 
+ 필터는 말 그대로 요청과 응답을 거른뒤 정제하는 역할을 한다.
+Dispatcher Servlet에 요청이 전달되기 전 / 후에 url 패턴에 맞는 모든 요청에 대해 부가 작업을 처리할 수 있는 기능을 제공한다.
+즉, 스프링 컨테이너가 아닌 톰캣과 같은 웹 컨테이너에 의해 관리가 되는 것이고, 스프링 범위 밖에서 처리되는 것이다.
+ 보안 및 인증/인가 관련 작업, 모든 요청에 대한 로깅 또는 검사, 데이터 압축 및 문자열 인코딩, Spring과 분리되어야 하는 기능에 사용된다.
+
+ 인터셉터는 요청에 대한 작업 전 / 후로 가로챈다고 보면 된다.
+Dispatcher Servlet이 Controller를 호출하기 전 / 후에 인터셉터가 끼어들어 요청과 응답을 참조하거나 가공할 수 있는 기능을 제공한다.
+웹 컨테이너에서 동작하는 필터와 달리 인터셉터는 스프링 컨텍스트에서 동작한다.
+세부적인 보안 및 인증/인가 공통 작업, API 호출에 대한 로깅 또는 검사, Controller로 넘겨주는 정보(데이터)의 가공에 사용된다.
 </details>
 
