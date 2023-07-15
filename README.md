@@ -514,3 +514,39 @@ BCNF
 </br>
 - 객체의 의존 관계에서 강한 결합이란, 어떠한 객체가 다른 객체에 강한 의존성을 가지고 있음을 뜻한다. 쉽게 말하면 한 객체 클래스내에서 다른 객체를 직접 생성한다면 객체간의 강한 결합이라고 할 수 있다. 이렇게되면 클래스안에서 생성했었던 객체 정보가 바뀌게 된다면, 해당 클래스에서도 그 객체와 관련한 코드들을 수정해주고 이는 유지보수에 어려움을 일으킵니다. 이에 반해 느슨한 결합은 interface를 통해 구현이 가능한데, 객체 클래스에서는 다른 객체를 직접 생성하지않고, 생성자나 setter, 일반 메서드를 통해 해당 객체를 외부에서 매개변수로 받는다. 이때 받는 인자를 interface로 선언하여 외부에서 객체 정보가 바뀌어도 interface에 대한 또 다른 구현체일테니, 자바의 다형성의 특징때문에 주입받는 객체와 연결되어있는 인자정보를 바꿀 필요가 없고 이는 유지보수성이 용이하다고 할 수 있다.
 </details>
+
+
+## 2023-07-15
+
+정규성
+<details>
+ <summary> 1 </summary>
+</br>
+</details>
+
+<details>
+ <summary> 2 </summary>
+</br>
+ </details>
+
+<details>
+ <summary> 3 </summary>
+</br>
+</details>
+
+조준희
+<details>
+ <summary> JVM의 구조와 Java의 실행방식을 설명해주세요. </summary>
+</br>
+</details>
+
+<details>
+ <summary> 자바의 메모리구조에 대해 설명해보시오.  </summary>
+</br>
+</details>
+
+<details>
+ <summary> 인터페이스와 추상클래스의 차이점에 대해 설명해주세요. </summary>
+</br>
+</details>
+
