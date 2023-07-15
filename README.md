@@ -541,31 +541,44 @@ BCNF
 JVM의 구조는 Class Loader, Execution engine, Runtime Data Area, Garbage Collector 로 이루어져 있다.
 
 1. Class Lodaer : JVM 내의 클래스파일(.class)을 로드를 통해 Runtime Data Area 에 저장하고, 링크(검증, 준비, 분석), 초기화 하는 작업을 거친다.
-2. Execution engine : Runtime Data Area에 저장된 바이트 코드들을 실행하는 역할을 한다.(인터프리터,JIT 컴파일러에 의해 실행)
-3. Runtime Data Area : 프로그램이 실행되는 영역
-4. Garbage Collector : 자바의 메모리 관리 방법 중의 하나로 JVM(자바 가상 머신)의 Heap 영역에서 동적으로 할당했던 메모리 중 필요 없게 된 메모리 객체(garbage)를 모아 주기적으로 제거하는 영역이다.
+   
+3. Execution engine : Runtime Data Area에 저장된 바이트 코드들을 실행하는 역할을 한다.(인터프리터,JIT 컴파일러에 의해 실행)
+   
+5. Runtime Data Area : 프로그램이 실행되는 영역
+   
+7. Garbage Collector : 자바의 메모리 관리 방법 중의 하나로 JVM(자바 가상 머신)의 Heap 영역에서 동적으로 할당했던 메모리 중 필요 없게 된 메모리 객체(garbage)를 모아 주기적으로 제거하는 영역이다.
  
 </details>
 
 <details>
  <summary> 자바의 메모리구조에 대해 자세하게 설명해보시오.  </summary>
 </br>
+ 
  자바의 메모리구조(Runtime Data Area)는 5가지로 구성되어있다.
+ 
  1) PC Register : Thread가 시작될 때 생성되며 현재 수행 중인 JVM의 명령어 주소를 가지고 있다.
- 2) Stack Area : 지역 변수, 파라미터 등이 생성되는 영역이며 실제 객체는 Heap에 할당되고 해당 레퍼런스만 Stack에 저장된다. 스레드마다 한 개씩 가지고 있다.
- 3) Heap Area : 동적으로 생성된 객체와 배열이 저장되는 곳으로 GC의 대상 영역이다. 한 프로세스내의 스레드들은 이 영역을 같이 공유할 수 있다.
- 4) Method Area : 클래스 멤버 변수, 메소드 정보, Type 정보, Constant Pool, static, final 변수 등이 생성된다.
- 5) Native Method Stack : Java 가 아닌 다른 언어 (C, C++) 로 구성된 메소드를 실행이 필요할 때 사용되는 공간
+    
+ 3) Stack Area : 지역 변수, 파라미터 등이 생성되는 영역이며 실제 객체는 Heap에 할당되고 해당 레퍼런스만 Stack에 저장된다. 스레드마다 한 개씩 가지고 있다.
+    
+ 5) Heap Area : 동적으로 생성된 객체와 배열이 저장되는 곳으로 GC의 대상 영역이다. 한 프로세스내의 스레드들은 이 영역을 같이 공유할 수 있다.
+    
+ 7) Method Area : 클래스 멤버 변수, 메소드 정보, Type 정보, Constant Pool, static, final 변수 등이 생성된다.
+    
+ 9) Native Method Stack : Java 가 아닌 다른 언어 (C, C++) 로 구성된 메소드를 실행이 필요할 때 사용되는 공간
+     
+</details>
 
-<details>
-</br>
+ <details>
  <summary> GC가 무엇인지, 필요한 이유는 무엇인지, 동작방식에 대해 설명해주세요. </summary>
  <br>
- GC는 자바의 메모리 관리 방법 중의 하나로 JVM(자바 가상 머신)의 Heap 영역에서 동적으로 할당했던 메모리 중 필요 없게 된 메모리 객체(garbage)를 모아 주기적으로 제거하는 영역이다.
- 다음 두가지 과정을 거치면서 GC가 이루어진다.
+ GC는 자바의 메모리 관리 방법 중의 하나로 JVM(자바 가상 머신)의 Heap 영역에서 동적으로 할당했던 메모리 중 필요 없게 된 메모리 객체(garbage)를 모아 주기적으로 제거하는 영역이다. <br>
+  
+ 다음 두가지 과정을 거치면서 GC가 이루어진다. <br>
+ 
  1. Stop The World
     - JVM이 애플리케이션의 실행을 멈추는 작업이다. GC가 실행될 때는 GC를 실행하는 쓰레드를 제외한 모든 쓰레드들의 작업이 중단되고, GC가 완료되면 작업이 재개된다.
- 3. Mark and Sweep
+      
+ 2. Mark and Sweep
     1) Mark: 사용되는 메모리와 사용되지 않는 메모리를 식별하는 작업
        - 힙 영역에 할당된 객체들이 Unreachable, reachable 인지 체크하는 과정이다.
     3) Sweep: Mark 단계에서 사용되지 않음(Unreachable)으로 식별된 메모리를 해제하는 작업
