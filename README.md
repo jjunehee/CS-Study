@@ -536,12 +536,24 @@ BCNF
 
 조준희
 <details>
- <summary> JVM의 구조와 Java의 실행방식을 설명해주세요. </summary>
+ <summary> JVM의 구조에 대해 설명해보시오. </summary>
 </br>
+JVM의 구조는 Class Loader, Execution engine, Runtime Data Area, JNI, Native Method Library로 이루어져 있다.
+
+1. Class Lodaer : JVM 내의 클래스파일(.class)을 로드를 통해 Runtime Data Area 에 저장하고, 링크(검증, 준비, 분석), 초기화 하는 작업을 거친다.
+2. Execution engine : Runtime Data Area에 저장된 바이트 코드들을 실행하는 역할을 한다.(인터프리터,JIT 컴파일러에 의해 실행)
+3. Runtime Data Area : 프로그램이 실행되는 영역
+ 1) PC Register : Thread가 시작될 때 생성되며 현재 수행 중인 JVM의 명령어 주소를 가지고 있다.
+ 2) Stack Area : 지역 변수, 파라미터 등이 생성되는 영역이며 실제 객체는 Heap에 할당되고 해당 레퍼런스만 Stack에 저장된다.
+ 3) Heap Area : 동적으로 생성된 객체와 배열이 저장되는 곳으로 GC의 대상 영역이다.
+ 4) Method Area : 클래스 멤버 변수, 메소드 정보, Type 정보, Constant Pool, static, final 변수 등이 생성된다.
+ 5) JNI(Java Native Interface) : 자바 애플리케이션에서 C, C++, 어셈블리어로 작성된 함수를 사용할 수 있는 방법을 제공한다. Native 키워드를 사용해 메서드를 호출하며 대표적인 메서드는 Thread의 currentThread()이다.
+ 6) Native Method Library : C, C++로 작성된 라이브러리다. 자바 이외의 언어로 작성된 네이티브 코드를 실행할 때 사용되는 메모리 영역으로 일반적인 C스택을 사용한다.
+ 
 </details>
 
 <details>
- <summary> 자바의 메모리구조에 대해 설명해보시오.  </summary>
+ <summary> 자바의 메모리구조에 대해 자세하게 설명해보시오.  </summary>
 </br>
 </details>
 
