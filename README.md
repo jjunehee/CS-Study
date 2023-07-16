@@ -622,8 +622,10 @@ JVM의 구조는 Class Loader, Execution engine, Runtime Data Area, Garbage Coll
 </details>
 
 <details>
- <summary> 소켓? 도대체 소켓통신이 뭐냐? </summary>
+ <summary> 소켓? 도대체 소켓이 뭐냐? </summary>
 </br>
+ 소켓은 컴퓨터 네트워크에서 프로세스 간 통신을 가능하게 하는 연결부라고 볼 수 있다. 소켓은 전송 계층과 응용프로그램 사이의 인터페이스 역할을 하며 떨어져 있는 두 호스트를 연결해준다. 데이터를 통신할 수 있도록 연결해주기 때문에 통신할 클라이언트와 서버 모두에 소켓이 생성되어야 한다. 
+흠.... 진짜 잘 모르겠따... 흠...........
 </details>
 
  <details>
